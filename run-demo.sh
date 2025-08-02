@@ -12,6 +12,9 @@
 #  running, then just runs the server like normal.
 #
 
+datafile=$(pwd)/demo.gnucash
+echo "using: $datafile"
+
 docker rm -f gnucashew-demo
 
 docker run                             \
@@ -19,7 +22,7 @@ docker run                             \
   --restart unless-stopped             \
   -it                                  \
   --net host                           \
-  -v $(pwd)/.gnucash:/opt/gnucashew-dev/build/sqlite3data.gnucash \
+  -v $datafile:/opt/gnucashew-dev/build/sqlite3data.gnucash \
   -e GNUCASHEW_PORT=8091               \
   -w /opt/gnucashew-dev/build          \
   gnucashew-docker bash ../run.sh
