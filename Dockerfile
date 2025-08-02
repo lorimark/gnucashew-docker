@@ -1,8 +1,8 @@
 # Global Arguments to be reused within some containers
 # need to be defined without value in the image-definition
-# ARG wtversion=4.10-release
+ARG wtversion=4.10-release
 # ARG wtversion=4.11-release
-ARG wtversion=master
+# ARG wtversion=master
 ARG projectname=WtApplication.wt
 
 # Using a baseimage to set the same in compiling-container as well as runtime-container
@@ -133,7 +133,7 @@ RUN make install
 
 RUN ldconfig
 
-RUN touch /tmp/nocache138
+RUN touch /tmp/nocache151
 WORKDIR /opt
 RUN git clone --single-branch https://github.com/lorimark/gnucashew-dev
 
