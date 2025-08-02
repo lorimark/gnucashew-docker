@@ -19,7 +19,7 @@ docker run                             \
   --restart unless-stopped             \
   -it                                  \
   --net host                           \
-  -v /data/Gnucash58Test.gnucash:/opt/gnucashew-dev/build/sqlite3data.gnucash \
+  -v $(pwd)/.gnucash:/opt/gnucashew-dev/build/sqlite3data.gnucash \
   -e GNUCASHEW_PORT=8091               \
   -w /opt/gnucashew-dev/build          \
   gnucashew-docker bash ../run.sh
